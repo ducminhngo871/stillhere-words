@@ -405,3 +405,4 @@ body.gated .appbar .tabs,body.gated #dd-set,body.gated #h-review,body.gated #h-t
 .sitefoot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:40px;padding:18px 2px 0;border-top:1px solid var(--rule);color:var(--muted);font-size:.88rem}
 .sitefoot a{color:var(--ink);font-weight:600;text-decoration:none}
 .sitefoot a:hover{text-decoration:underline}
+

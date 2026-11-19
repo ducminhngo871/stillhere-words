@@ -1,0 +1,8 @@
+name = "stillhere-words"
+pages_build_output_dir = "app/split"
+compatibility_date = "2024-11-01"
+
+[vars]
+# ID dự án Firebase (Project settings → Project ID). Không phải bí mật.
+# Để trống thì máy chủ từ chối mọi yêu cầu dữ liệu (đóng an toàn).
+FIREBASE_PROJECT_ID = "stillhere-words"

@@ -1229,25 +1229,26 @@ function renderHello() {
 }
 
 /* ================= TÀI KHOẢN ================= */
-// Khi chuyển trang sang hosting riêng: tạo dự án Firebase, bật Authentication (Email/Password và Google),
-// bật Firestore, rồi dán cấu hình web của dự án vào đây, ví dụ:
-// const FIREBASE_CONFIG = { apiKey: "...", authDomain: "...", projectId: "...", appId: "..." };
-const FIREBASE_CONFIG = null;
+// Cấu hình Firebase nằm ở js/firebase-config.js; js/boot.js khởi tạo Firebase và nạp dữ liệu trước khi chạy file này.
 const AUTH = { mode: "local", user: null, fb: null };
 const loadScript = src => new Promise((ok, no) => { const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
 async function authInit() {
   renderAcct();
   if (!FIREBASE_CONFIG) return;
+  AUTH.mode = "cloud"; // khoá trang ngay từ đầu; Firebase có thể vẫn đang tải ngầm (boot.js)
   try {
-    const base = "https://www.gstatic.com/firebasejs/10.12.2/";
-    await loadScript(base + "firebase-app-compat.js");
-    await loadScript(base + "firebase-auth-compat.js");
-    await loadScript(base + "firebase-firestore-compat.js");
-    firebase.initializeApp(FIREBASE_CONFIG);
-    AUTH.fb = { auth: firebase.auth(), db: firebase.firestore() }; AUTH.mode = "cloud";
+    if (window.FB_READY) await window.FB_READY;
+    else if (!window.firebase || !firebase.apps.length) {
+      const base = "https://www.gstatic.com/firebasejs/10.12.2/";
+      await loadScript(base + "firebase-app-compat.js");
+      await loadScript(base + "firebase-auth-compat.js");
+      await loadScript(base + "firebase-firestore-compat.js");
+      firebase.initializeApp(FIREBASE_CONFIG);
+    }
+    AUTH.fb = { auth: firebase.auth(), db: firebase.firestore() };
     AUTH.fb.auth.languageCode = "vi";
     AUTH.fb.auth.onAuthStateChanged(async u => { AUTH.user = u; if (u && u.displayName && !$("t-name").value) $("t-name").value = u.displayName; renderAcct(); renderHello(); if (u) await syncDown(); });
-  } catch (e) { console.error("Không tải được Firebase", e); AUTH.mode = "local"; renderAcct(); }
+  } catch (e) { console.error("Không tải được Firebase", e); renderAcct(); }
 }
 let syncTimer = null;
 function scheduleSync() { if (!AUTH.user || !AUTH.fb) return; clearTimeout(syncTimer); syncTimer = setTimeout(syncUp, 1500); }
@@ -1291,6 +1292,20 @@ function renderAcct() {
 const LOCAL_NOTE = `<div class="infonote">Bản trên Claude chưa kết nối máy chủ tài khoản. Đăng ký, đăng nhập Google và email đặt lại mật khẩu sẽ hoạt động khi trang được đưa lên hosting riêng. Hiện tiến độ được lưu trên thiết bị này.</div>`;
 const GICON = `<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>`;
 function openAcct(tab = "in") {
+  if (AUTH.mode === "cloud" && !AUTH.fb) { if (window.FB_READY) window.FB_READY.then(() => setTimeout(() => openAcct(tab), 0)); return; }
+  if (AUTH.user && AUTH.mode === "cloud" && !AUTH.user.emailVerified) {
+    const u = AUTH.user;
+    openModal(`<h3 id="m-title">Xác minh email</h3><p>Chúng tôi đã gửi thư xác minh đến <b style="color:var(--ink)">${esc(u.email || "")}</b>. Hãy bấm vào đường dẫn trong thư, rồi quay lại đây và bấm “Tôi đã xác minh”.</p><div class="hint" id="a-vmsg" role="status"></div>
+      <div class="actions"><button class="btn ghost" id="a-out">Đăng xuất</button><button class="btn ghost" id="a-resend">Gửi lại thư</button><button class="btn" id="a-verified">Tôi đã xác minh</button></div>`);
+    const vmsg = s => { $("a-vmsg").textContent = s; };
+    $("a-out").onclick = async () => { await AUTH.fb.auth.signOut(); closeModal(); };
+    $("a-resend").onclick = async () => { try { await u.sendEmailVerification(); vmsg("Đã gửi lại thư xác minh."); } catch (e) { vmsg(authMsg(e)); } };
+    $("a-verified").onclick = async () => {
+      try { await u.reload(); if (u.emailVerified) { await u.getIdToken(true); try { localStorage.setItem("shw-signed-in", "1"); } catch (e) {} location.reload(); } else vmsg("Email chưa được xác minh. Hãy kiểm tra hộp thư, kể cả mục thư rác."); }
+      catch (e) { vmsg(authMsg(e)); }
+    };
+    return;
+  }
   if (AUTH.user) {
     const u = AUTH.user, via = (u.providerData[0] || {}).providerId === "google.com" ? "Google" : "email và mật khẩu";
     openModal(`<h3 id="m-title">Tài khoản</h3><p><b style="color:var(--ink)">${esc(u.displayName || "")}</b><br>${esc(u.email || "")}<br><span class="hint">Đăng nhập bằng ${via}. Tiến độ học được đồng bộ giữa các thiết bị.</span></p>
@@ -1341,13 +1356,13 @@ function openAcct(tab = "in") {
       if (pass.length < 6) { msg("Mật khẩu cần ít nhất 6 ký tự."); return; }
       if (pass !== $("a-pass2").value) { msg("Hai mật khẩu chưa khớp nhau."); return; }
       if (needCloud()) return;
-      try { const c = await AUTH.fb.auth.createUserWithEmailAndPassword(email, pass); await c.user.updateProfile({ displayName: name }); AUTH.user = c.user; renderAcct(); renderHello(); try { await c.user.sendEmailVerification(); } catch (e) {} closeModal(); }
+      try { const c = await AUTH.fb.auth.createUserWithEmailAndPassword(email, pass); await c.user.updateProfile({ displayName: name }); AUTH.user = c.user; renderAcct(); renderHello(); try { await c.user.sendEmailVerification(); } catch (e) {} openAcct(); }
       catch (e) { msg(authMsg(e)); }
       return;
     }
     if (!pass) { msg("Hãy nhập mật khẩu."); return; }
     if (needCloud()) return;
-    try { await AUTH.fb.auth.signInWithEmailAndPassword(email, pass); closeModal(); } catch (e) { msg(authMsg(e)); }
+    try { const c = await AUTH.fb.auth.signInWithEmailAndPassword(email, pass); AUTH.user = c.user; if (c.user.emailVerified) closeModal(); else openAcct(); } catch (e) { msg(authMsg(e)); }
   };
   $("a-go").onclick = go;
   $("m-box").querySelectorAll(".af input").forEach(i => i.addEventListener("keydown", e => { if (e.key === "Enter") go(); }));
@@ -1603,9 +1618,10 @@ openAcct = function (tab = "in") {
 /* ---- BẮT BUỘC ĐĂNG NHẬP ----
    Yêu cầu của giáo viên: học sinh chỉ xem được nội dung sau khi đăng nhập.
    Cờ này chỉ có tác dụng khi trang đã có máy chủ tài khoản (FIREBASE_CONFIG khác null).
+   Dữ liệu chỉ được máy chủ trả về khi đã đăng nhập và xác minh email (functions/_middleware.js); boot.js đặt window.DATA_READY.
    Bản chạy trên Claude chưa có máy chủ nên vẫn mở tự do để xem thử. */
 const REQUIRE_LOGIN = true;
-const isGated = () => REQUIRE_LOGIN && AUTH.mode === "cloud" && !AUTH.user;
+const isGated = () => REQUIRE_LOGIN && AUTH.mode === "cloud" && !window.DATA_READY;
 function applyGate() {
   const g = isGated();
   document.body.classList.toggle("gated", g);

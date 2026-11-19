@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="booting">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>/* Màn hình chờ: có hiệu lực từ lần vẽ đầu, trước khi css/styles.css tải xong */
+.boot-splash{display:none}
+html.booting body>:not(.boot-splash){visibility:hidden}
+html.booting .boot-splash{display:flex;position:fixed;inset:0;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--paper,#F4F7FB);color:var(--muted,#5D6678);font-family:var(--font-body,Inter,system-ui,sans-serif);font-size:15px}
+.boot-spin{width:28px;height:28px;border-radius:50%;border:3px solid var(--rule,#d6dce6);border-top-color:var(--ink,#1B2F6B);animation:boot-spin .8s linear infinite}
+@keyframes boot-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.boot-spin{animation-duration:2.4s}}
+@media (prefers-color-scheme:dark){html.booting .boot-splash{background:#0F1522;color:#9AA4B8}}
+</style>
 <title>StillHere Words – IELTS & SAT</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20160%20160%22%20role%3D%22img%22%20aria-label%3D%22StillHere%20Words%22%3E%0A%3Crect%20width%3D%22160%22%20height%3D%22160%22%20rx%3D%2236%22%20fill%3D%22%23062B4F%22/%3E%0A%3Crect%20x%3D%2228%22%20y%3D%2226%22%20width%3D%2288%22%20height%3D%22108%22%20rx%3D%2212%22%20fill%3D%22%231C5FA8%22/%3E%0A%3Crect%20x%3D%2244%22%20y%3D%2240%22%20width%3D%2288%22%20height%3D%22108%22%20rx%3D%2212%22%20fill%3D%22%23EAF2FB%22/%3E%0A%3Crect%20x%3D%2256%22%20y%3D%22110%22%20width%3D%2211%22%20height%3D%2224%22%20rx%3D%223%22%20fill%3D%22%231C8F73%22/%3E%0A%3Crect%20x%3D%2272%22%20y%3D%2298%22%20width%3D%2211%22%20height%3D%2236%22%20rx%3D%223%22%20fill%3D%22%232F80D4%22/%3E%0A%3Crect%20x%3D%2288%22%20y%3D%2284%22%20width%3D%2211%22%20height%3D%2250%22%20rx%3D%223%22%20fill%3D%22%237A6FCF%22/%3E%0A%3Crect%20x%3D%22104%22%20y%3D%2270%22%20width%3D%2211%22%20height%3D%2264%22%20rx%3D%223%22%20fill%3D%22%235BBFA0%22/%3E%0A%3Cpolyline%20points%3D%2261.5%2C100%2077.5%2C88%2093.5%2C74%20109.5%2C59%22%20fill%3D%22none%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%3Ccircle%20cx%3D%2261.5%22%20cy%3D%22100%22%20r%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%2277.5%22%20cy%3D%2288%22%20r%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%2293.5%22%20cy%3D%2274%22%20r%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%22109.5%22%20cy%3D%2259%22%20r%3D%226%22%20fill%3D%22%23fff%22%20stroke%3D%22%231C5FA8%22%20stroke-width%3D%222.5%22/%3E%0A%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="preload" href="js/app.js" as="script">
+<link rel="preload" href="js/data/I18N_DICT.js" as="script">
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 </head>
 <body>
+<div class="boot-splash" aria-hidden="true"><span class="boot-spin"></span><span class="boot-name">StillHere Words</span></div>
 <header class="appbar">
   <div class="barin">
     <button class="logo" id="logo-home" aria-label="StillHere Words – Trang chủ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="38" height="38" aria-hidden="true">
@@ -464,13 +477,7 @@
   <footer class="sitefoot"><span>StillHere Words · <span class="madeby">Được tạo bởi</span> <a href="https://stillhereduc.com/" target="_blank" rel="noopener">Still Here Duc</a></span><button class="linkbtn" id="foot-about">Giới thiệu</button></footer>
 </div>
 
-<script src="js/data/D.js"></script>
-<script src="js/data/IELTS_NEW.js"></script>
-<script src="js/data/BK.js"></script>
-<script src="js/data/SAT.js"></script>
-<script src="js/data/SAFF.js"></script>
-<script src="js/data/I18N_DICT.js"></script>
-<script src="js/data/EXTRA_EN.js"></script>
-<script src="js/app.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/boot.js"></script>
 </body>
 </html>

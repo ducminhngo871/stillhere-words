@@ -8,6 +8,8 @@ __pycache__/
 *.zip
 .env
 .env.*
+.wrangler/
+.dev.vars
 
 CLAUDE.md
 docs/
@@ -18,3 +20,4 @@ app/split/js/data/
 app/single-file/
 tools/legacy/
 tools/i18n/data_en.py
+app/split/js/firebase-config.js

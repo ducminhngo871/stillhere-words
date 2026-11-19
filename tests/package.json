@@ -2,7 +2,10 @@
   "name": "stillhere-words-tests",
   "private": true,
   "scripts": {
-    "smoke": "for f in smoke2 smoke7 smoke8 smoke9 smoke10 smoke11; do echo $f; node $f.js | tail -1; done"
+    "smoke": "for f in smoke2 smoke7 smoke8 smoke9 smoke10 smoke11; do echo $f; node $f.js | tail -1; done",
+    "gate": "node --test gate.test.mjs"
   },
-  "devDependencies": { "jsdom": "^24.1.3" }
+  "devDependencies": {
+    "jsdom": "^24.1.3"
+  }
 }

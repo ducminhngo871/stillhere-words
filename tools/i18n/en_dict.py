@@ -142,6 +142,14 @@ EN = {
 "Cả hai đều có gốc": "Both contain the root", "gốc Latin": "Latin root", "gốc Hy Lạp": "Greek root",
 "Danh sách này chưa có từ để tách.": "This list has no words to split yet.", "Danh sách này chưa có từ phù hợp.": "This list has no suitable words yet.",
 "Danh sách này có quá ít gốc từ.": "This list has too few roots.", "Danh sách này chưa có nhóm từ cùng gốc.": "This list has no root families yet.",
+# xác minh email, nạp trang
+"Xác minh email": "Verify your email",
+"Chúng tôi đã gửi thư xác minh đến": "We sent a verification email to",
+". Hãy bấm vào đường dẫn trong thư, rồi quay lại đây và bấm “Tôi đã xác minh”.": ". Click the link in that email, then come back here and press “I've verified”.",
+"Gửi lại thư": "Resend email", "Tôi đã xác minh": "I've verified",
+"Đã gửi lại thư xác minh.": "Verification email sent again.",
+"Email chưa được xác minh. Hãy kiểm tra hộp thư, kể cả mục thư rác.": "Your email is not verified yet. Check your inbox, including the spam folder.",
+"Không tải được trang. Hãy kiểm tra kết nối mạng rồi tải lại.": "The page could not load. Check your connection and reload.",
 }
 import re
 RULES = [
