@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>StillHere Words – IELTS & SAT</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20160%20160%22%20role%3D%22img%22%20aria-label%3D%22StillHere%20Words%22%3E%0A%3Crect%20width%3D%22160%22%20height%3D%22160%22%20rx%3D%2236%22%20fill%3D%22%23062B4F%22/%3E%0A%3Crect%20x%3D%2228%22%20y%3D%2226%22%20width%3D%2288%22%20height%3D%22108%22%20rx%3D%2212%22%20fill%3D%22%231C5FA8%22/%3E%0A%3Crect%20x%3D%2244%22%20y%3D%2240%22%20width%3D%2288%22%20height%3D%22108%22%20rx%3D%2212%22%20fill%3D%22%23EAF2FB%22/%3E%0A%3Crect%20x%3D%2256%22%20y%3D%22110%22%20width%3D%2211%22%20height%3D%2224%22%20rx%3D%223%22%20fill%3D%22%231C8F73%22/%3E%0A%3Crect%20x%3D%2272%22%20y%3D%2298%22%20width%3D%2211%22%20height%3D%2236%22%20rx%3D%223%22%20fill%3D%22%232F80D4%22/%3E%0A%3Crect%20x%3D%2288%22%20y%3D%2284%22%20width%3D%2211%22%20height%3D%2250%22%20rx%3D%223%22%20fill%3D%22%237A6FCF%22/%3E%0A%3Crect%20x%3D%22104%22%20y%3D%2270%22%20width%3D%2211%22%20height%3D%2264%22%20rx%3D%223%22%20fill%3D%22%235BBFA0%22/%3E%0A%3Cpolyline%20points%3D%2261.5%2C100%2077.5%2C88%2093.5%2C74%20109.5%2C59%22%20fill%3D%22none%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%3Ccircle%20cx%3D%2261.5%22%20cy%3D%22100%22%20r%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%2277.5%22%20cy%3D%2288%22%20r%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%2293.5%22%20cy%3D%2274%22%20r%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%237FB0E0%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%22109.5%22%20cy%3D%2259%22%20r%3D%226%22%20fill%3D%22%23fff%22%20stroke%3D%22%231C5FA8%22%20stroke-width%3D%222.5%22/%3E%0A%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="barin">
+    <button class="logo" id="logo-home" aria-label="StillHere Words – Trang chủ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="38" height="38" aria-hidden="true">
+<rect width="160" height="160" rx="36" fill="#062B4F"/>
+<rect x="28" y="26" width="88" height="108" rx="12" fill="#1C5FA8"/>
+<rect x="44" y="40" width="88" height="108" rx="12" fill="#EAF2FB"/>
+<rect x="56" y="110" width="11" height="24" rx="3" fill="#1C8F73"/>
+<rect x="72" y="98" width="11" height="36" rx="3" fill="#2F80D4"/>
+<rect x="88" y="84" width="11" height="50" rx="3" fill="#7A6FCF"/>
+<rect x="104" y="70" width="11" height="64" rx="3" fill="#5BBFA0"/>
+<polyline points="61.5,100 77.5,88 93.5,74 109.5,59" fill="none" stroke="#7FB0E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="61.5" cy="100" r="5" fill="#fff" stroke="#7FB0E0" stroke-width="2"/>
+<circle cx="77.5" cy="88" r="5" fill="#fff" stroke="#7FB0E0" stroke-width="2"/>
+<circle cx="93.5" cy="74" r="5" fill="#fff" stroke="#7FB0E0" stroke-width="2"/>
+<circle cx="109.5" cy="59" r="6" fill="#fff" stroke="#1C5FA8" stroke-width="2.5"/>
+</svg><span class="t">StillHere <b>Words</b></span></button>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="learn" aria-selected="false">Học từ</button>
+      <button role="tab" data-tab="test" aria-selected="false">Kiểm tra</button>
+      <button role="tab" data-tab="learned" aria-selected="false">Từ đã học</button>
+      <button role="tab" data-tab="affix" aria-selected="false">Tiền tố – hậu tố</button>
+      <button role="tab" data-tab="guide" aria-selected="false">Hướng dẫn</button>
+    </nav>
+    <div class="bar-right">
+      <div class="dd" id="dd-set">
+        <button class="ddbtn" aria-haspopup="true" aria-expanded="false" aria-label="Bộ từ"><span id="dd-set-label">IELTS</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="ddmenu" role="menu">
+          <button role="menuitem" class="setpill" id="set-ielts"><b>IELTS</b><small>500 từ học thuật</small></button>
+          <button role="menuitem" class="setpill off" id="set-sat"><b>SAT</b><small>834 từ · Words in Context</small></button>
+        </div>
+      </div>
+      <div class="dd" id="dd-lang">
+        <button class="ddbtn" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ / Language"><span id="dd-lang-label"></span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="ddmenu" role="menu">
+          <button role="menuitem" class="langbtn on" id="lang-vi"><img src="assets/flag-vi.png" alt="" width="21" height="14"><span>Tiếng Việt</span></button>
+          <button role="menuitem" class="langbtn" id="lang-en"><img src="assets/flag-en.png" alt="" width="18" height="18"><span>English</span></button>
+        </div>
+      </div>
+      <button class="signin" id="acct-btn"><span class="ava hidden" id="acct-ava"></span><span class="nm" id="acct-name">Đăng nhập</span></button>
+      <button class="btn cta" id="cta-start">Bắt đầu học</button>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+
+  <!-- ===== HOME ===== -->
+  <section id="v-home" class="hidden">
+    <div class="hero">
+      <div class="badge"><i></i><span id="h-badge">Mới: giao diện song ngữ Việt – Anh</span></div>
+      <h1 class="hero-h" id="h-title">Học từ hôm nay,<br>vẫn nhớ tháng sau.</h1>
+      <p class="gate-note"><span>Bạn cần đăng nhập để học và làm bài.</span></p>
+      <p class="hero-sub" id="h-sub">Flashcard, nghe chép, bài kiểm tra tính giờ và lịch ôn tập cho IELTS và SAT, gói gọn trong một trang.</p>
+      <div class="hero-cta"><button class="btn big" id="h-learn">Bắt đầu học <span aria-hidden="true">→</span></button><button class="btn ghost big" id="h-test">Làm bài kiểm tra</button></div>
+      <div id="h-review"></div>
+      <div class="trust"><div class="trust-l">NỘI DUNG CÓ SẴN</div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="9" cy="12" r="6" opacity=".55"/><circle cx="15" cy="12" r="6"/></svg>500 từ IELTS</span>
+          <span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 3 22 21H2z"/></svg>649 từ SAT hay gặp</span>
+          <span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="var(--paper)"/></svg>319 từ Barron's</span>
+          <span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m12 2 10 10-10 10L2 12z"/></svg>846 câu Words in Context</span>
+          <span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><rect x="3" y="11" width="4" height="10" rx="1"/><rect x="10" y="5" width="4" height="16" rx="1"/><rect x="17" y="14" width="4" height="7" rx="1"/></svg>54 gốc từ Latin – Hy Lạp</span>
+        </div>
+      </div>
+    </div>
+  
+    <section class="about" id="about">
+      <div class="about-card">
+        <img class="about-ava" src="assets/about-avatar.png" alt="Duc Ngo" width="96" height="96">
+        <div class="about-body">
+          <div class="about-k">Về StillHere Words</div>
+          <h2>Được tạo bởi Still Here Duc</h2>
+          <p>StillHere Words là dự án của Ngô Minh Đức (Duc Ngo), giáo viên IELTS và SAT, đồng thời là người làm phân tích dữ liệu. Trang kết hợp kinh nghiệm đứng lớp với cách nhìn của người làm dữ liệu: mỗi bài kiểm tra và mỗi lượt ôn đều được ghi lại, để bạn biết từ nào đã nhớ và từ nào cần ôn tiếp.</p>
+          <p>Cái tên “Still Here” cũng là mục tiêu của trang: học hôm nay, và một tháng sau từ vẫn còn đó.</p>
+          <div class="about-cta"><a class="btn" href="https://stillhereduc.com/" target="_blank" rel="noopener">Ghé website stillhereduc.com <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ===== LEARNED WORDS ===== -->
+  <section id="v-learned" class="hidden">
+    <div class="sheet">
+      <h2>Từ đã học</h2>
+      <p class="lead">Những từ bạn bấm “Đã thuộc” ở Flashcard hoặc học thuộc ở chế độ Học thích ứng. Ôn lại đúng hạn để nhớ lâu.</p>
+      <div class="kpis" id="lw-kpis"></div>
+      <div class="lw-actions">
+        <label class="lbl" for="lw-mode" style="margin:0">Cách ôn</label>
+        <select id="lw-mode"><option value="mcq">Chọn nghĩa đúng</option><option value="type">Gõ từ tiếng Anh</option><option value="listen">Nghe và gõ lại</option></select>
+        <button class="btn" id="lw-due">Ôn từ đến hạn</button>
+        <button class="btn ghost" id="lw-all">Ôn tất cả</button>
+      </div>
+      <div id="lw-area"></div>
+    </div>
+  </section>
+
+  <!-- ===== TEST SETUP ===== -->
+  <section id="v-setup">
+    <div class="sheet">
+      <div class="hello"><div class="hi" data-hello>Chào bạn!</div><div class="stat" data-stat></div></div>
+      <div id="wrong-notice" class="notice hidden"></div>
+      <div class="field">
+        <label class="lbl" for="t-name">Tên học sinh</label>
+        <input type="text" id="t-name" placeholder="Ví dụ: Minh Anh" autocomplete="off" style="width:100%;max-width:320px">
+      </div>
+
+      <!-- original -->
+      <div id="p-orig" class="hidden">
+        <h2>Đề theo từng phần</h2>
+        <p class="lead">Làm đúng đề của giáo viên, có tính giờ và tự chấm.</p>
+        <div class="field"><div class="testlist" id="o-list"></div></div>
+      </div>
+
+      <!-- custom -->
+      <div id="p-custom">
+        <h2>Tạo đề kiểm tra</h2>
+        <p class="lead">Trang lấy ngẫu nhiên câu hỏi từ ngân hàng của tất cả các đề. Mỗi lần bấm bắt đầu là một đề mới.</p>
+        <div class="field">
+          <span class="lbl">Phạm vi từ</span>
+          <div class="row"><span>Từ số</span><input type="number" id="c-from" min="1" value="1"><span>đến</span><input type="number" id="c-to" min="1" value="70"></div>
+          <div class="chips" id="c-chips"></div>
+        </div>
+        <div class="field">
+          <label class="lbl" for="c-count">Số câu</label>
+          <div class="row"><input type="number" id="c-count" min="5" max="120" value="30"><span class="hint" id="c-count-hint"></span></div>
+          <div class="checks" style="margin-top:8px"><label><input type="checkbox" id="c-prio"><span>Ưu tiên từ hay sai<small>Câu có từ từng làm sai được chọn trước.</small></span></label></div>
+        </div>
+        <div class="field">
+          <span class="lbl">Độ khó</span>
+          <div class="seg" role="radiogroup">
+            <label><input type="radio" name="level" value="easy"><span>Dễ</span></label>
+            <label><input type="radio" name="level" value="medium" checked><span>Trung bình</span></label>
+            <label><input type="radio" name="level" value="hard"><span>Khó</span></label>
+          </div>
+          <div class="lvl-desc" id="lvl-desc"></div>
+        </div>
+        <div class="field checks" id="c-types">
+          <span class="lbl">Dạng bài</span>
+          <div class="tgroup"><div class="gname">Nghĩa của từ</div>
+            <label><input type="checkbox" name="ctype" value="vi" checked><span>Từ → nghĩa tiếng Việt</span></label>
+            <label><input type="checkbox" name="ctype" value="vi2en"><span>Nghĩa tiếng Việt → từ tiếng Anh</span></label>
+            <label><input type="checkbox" name="ctype" value="def2en"><span>Định nghĩa tiếng Anh → từ</span></label>
+          </div>
+          <div class="tgroup"><div class="gname">Nối</div>
+            <label><input type="checkbox" name="ctype" value="mdef" checked><span>Nối từ với định nghĩa</span></label>
+            <label><input type="checkbox" name="ctype" value="msyn" checked><span>Nối từ đồng nghĩa</span></label>
+            <label><input type="checkbox" name="ctype" value="mant"><span>Nối từ trái nghĩa</span></label>
+          </div>
+          <div class="tgroup"><div class="gname">Ngữ cảnh</div>
+            <label><input type="checkbox" name="ctype" value="fill" checked><span>Điền từ (giữ nguyên dạng)</span></label>
+            <label><input type="checkbox" name="ctype" value="form" checked><span>Điền từ có đổi dạng<small>Gồm các câu có 2–3 chỗ trống như đề gốc.</small></span></label>
+            <label><input type="checkbox" name="ctype" value="passage"><span>Đoạn văn kiểu IELTS<small id="psg-note">Hiện có cho từ 1–35.</small></span></label>
+          </div>
+        </div>
+        <div class="summary" id="c-avail"></div>
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="t-sec">Thời gian</label>
+        <select id="t-sec">
+          <option value="15">15 giây mỗi câu</option><option value="20">20 giây mỗi câu</option>
+          <option value="30" selected>30 giây mỗi câu</option><option value="45">45 giây mỗi câu</option>
+          <option value="60">60 giây mỗi câu</option><option value="0">Không giới hạn</option>
+        </select>
+      </div>
+      <div class="summary" id="t-summary"></div>
+      <div class="actions"><button class="btn" id="t-start">Bắt đầu kiểm tra</button></div>
+      <div class="err" id="t-err" role="alert"></div>
+    </div>
+  </section>
+
+  <!-- ===== TEST ===== -->
+  <section id="v-test" class="hidden">
+    <div class="sheet">
+      <div class="bar">
+        <div><div class="timer" id="timer">--:--</div><div class="progress" id="t-progress"></div></div>
+        <button class="btn pen" id="t-submit">Nộp bài</button>
+      </div>
+      <div id="t-head"></div>
+      <div id="t-result" class="hidden"></div>
+      <div id="t-body"></div>
+      <div class="actions" id="t-after"></div>
+    </div>
+  </section>
+
+
+  <!-- ===== SAT SETUP ===== -->
+  <section id="v-sat-setup" class="hidden">
+    <div class="sheet">
+      <div class="hello"><div class="hi" data-hello>Chào bạn!</div><div class="stat" data-stat></div></div>
+      <h2>Kiểm tra từ vựng SAT</h2>
+      <p class="lead">Chọn danh sách, phạm vi và dạng bài. Mỗi lần bấm bắt đầu là một đề mới.</p>
+      <div class="field">
+        <span class="lbl">Danh sách từ</span>
+        <div class="seg" role="radiogroup" id="s-list">
+          <label><input type="radio" name="slist" value="bb" checked><span>Hay gặp (649)</span></label>
+          <label><input type="radio" name="slist" value="br"><span>Barron's (319)</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <span class="lbl">Phạm vi từ</span>
+        <div class="row"><span>Từ số</span><input type="number" id="s-from" min="1" value="1"><span>đến</span><input type="number" id="s-to" min="1" value="50"></div>
+        <div class="chips" id="s-chips"></div>
+        <div class="checks" style="margin-top:8px"><label><input type="checkbox" id="s-both"><span>Chỉ từ có trong cả hai danh sách<small>Những từ vừa hay gặp vừa có trong Barron's, nên ưu tiên học trước.</small></span></label></div>
+      </div>
+      <div class="field">
+        <label class="lbl" for="s-count">Số câu</label>
+        <div class="row"><input type="number" id="s-count" min="5" max="100" value="25"></div>
+        <div class="checks" style="margin-top:8px"><label><input type="checkbox" id="s-prio"><span>Ưu tiên từ hay sai</span></label></div>
+      </div>
+      <div class="field">
+        <span class="lbl">Độ khó</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="slevel" value="easy"><span>Dễ</span></label>
+          <label><input type="radio" name="slevel" value="medium" checked><span>Trung bình</span></label>
+          <label><input type="radio" name="slevel" value="hard"><span>Khó</span></label>
+        </div>
+        <div class="lvl-desc" id="s-lvl-desc"></div>
+      </div>
+      <div class="field checks">
+        <span class="lbl">Dạng bài</span>
+        <label><input type="checkbox" name="stype" value="sdef2w" checked><span>Định nghĩa → từ</span></label>
+        <label><input type="checkbox" name="stype" value="sw2def" checked><span>Từ → định nghĩa</span></label>
+        <label><input type="checkbox" name="stype" value="smatch" checked><span>Nối từ với định nghĩa</span></label>
+        <label><input type="checkbox" name="stype" value="scol"><span>Giới từ đi kèm<small>Ví dụ: captivated ___ → by. Dùng 70 cụm có giới từ trong list hay gặp.</small></span></label>
+        <label><input type="checkbox" name="stype" value="swic"><span>Words in Context<small>Câu kiểu đề thật cho các từ đã soạn, có giải thích từng lựa chọn và mã bẫy sau khi nộp. Số câu có trong phạm vi hiện ở phần tóm tắt bên dưới.</small></span></label>
+      </div>
+      <div class="field">
+        <label class="lbl" for="s-sec">Thời gian</label>
+        <select id="s-sec"><option value="20">20 giây mỗi câu</option><option value="30" selected>30 giây mỗi câu</option><option value="45">45 giây mỗi câu</option><option value="60">60 giây mỗi câu</option><option value="71">71 giây mỗi câu (nhịp thi thật)</option><option value="0">Không giới hạn</option></select>
+      </div>
+      <div class="summary" id="s-summary"></div>
+      <div class="actions"><button class="btn" id="s-start">Bắt đầu kiểm tra</button></div>
+      <div class="err" id="s-err" role="alert"></div>
+    </div>
+  </section>
+
+  <!-- ===== SAT LEARN ===== -->
+  <section id="v-sat-learn" class="hidden">
+    <div class="sheet">
+      <div class="rangebar">
+        <label><select id="sl-list"><option value="bb">Hay gặp</option><option value="br">Barron's</option></select></label>
+        <label>Từ số <input type="number" id="sl-from" min="1" value="1"></label>
+        <label>đến <input type="number" id="sl-to" min="1" value="30"></label>
+        <label><input type="checkbox" id="sl-wrong"> Chỉ từ hay sai</label>
+      </div>
+      <div class="modes" id="sl-modes">
+        <button class="chip on" data-mode="flash">Flashcard</button>
+        <button class="chip" data-mode="adapt">Học thích ứng</button>
+        <button class="chip" data-mode="dict">Nghe chép</button>
+        <button class="chip" data-mode="match">Ghép cặp tính giờ</button>
+      </div>
+      <div id="sl-area"></div>
+    </div>
+  </section>
+
+  <!-- ===== GUIDE ===== -->
+  <section id="v-guide" class="hidden">
+    <div class="sheet">
+      <h2 id="g-title">Hướng dẫn học</h2>
+      <p class="lead">Đọc một lần trước khi bắt đầu, và quay lại đây mỗi khi cần.</p>
+      <div class="chips" id="g-chips" style="margin-bottom:6px">
+        <button class="chip" data-g="ielts" data-set="ielts">Mẹo cho IELTS</button>
+        <button class="chip" data-g="wic" data-set="sat">Mẹo cho SAT</button>
+        <button class="chip" data-g="traps" data-set="sat">Mã bẫy T1–T8</button>
+        <button class="chip" data-g="how">Cách học từ</button>
+      </div>
+
+      <div class="gsec" data-g="how">
+        <div data-lang="vi" data-noi18n>
+        <h3>Lộ trình cho mỗi nhóm từ</h3>
+        <div class="steps">
+          <div class="step"><div><b>Chọn nhóm nhỏ, 10–20 từ.</b> Ở tab Học từ, chọn phạm vi ngắn. Học ít mà chắc tốt hơn lướt cả trăm từ một lúc.</div></div>
+          <div class="step"><div><b>Flashcard: làm quen.</b> Đọc từ, bấm nghe phát âm, lật thẻ xem nghĩa và câu ví dụ. Đọc to câu ví dụ một lần. Bấm "Chưa thuộc" nếu chưa chắc.</div></div>
+          <div class="step"><div><b>Học thích ứng: nhớ chủ động.</b> Mỗi từ đi qua ba bước: chọn nghĩa, nhận ra qua định nghĩa, rồi tự gõ. Sai thì quay lại từ đầu, nên hãy làm đến khi thuộc hết nhóm.</div></div>
+          <div class="step"><div><b>Nghe chép: nhớ chính tả và cách đọc.</b> Rất hữu ích cho phần Listening của IELTS.</div></div>
+          <div class="step"><div><b>Ghép cặp tính giờ: ôn nhanh.</b> Chơi vài lượt, cố phá kỷ lục của chính mình.</div></div>
+          <div class="step"><div><b>Kiểm tra: dùng từ trong ngữ cảnh.</b> Làm bài có tính giờ, xem kỹ phần giải thích ở những câu sai, rồi bấm "Luyện lại các từ sai".</div></div>
+        </div>
+        <h3>Ôn lại theo lịch</h3>
+        <p>Não quên nhanh nhất trong vài ngày đầu. Ôn lại nhóm từ vào các mốc sau, mỗi lần chỉ cần 10–15 phút:</p>
+        <table class="week"><thead><tr><th>Lần</th><th>Thời điểm</th><th>Nên làm gì</th></tr></thead><tbody>
+          <tr><td>1</td><td>Ngày học</td><td>Flashcard, học thích ứng, nghe chép</td></tr>
+          <tr><td>2</td><td>Sau 1 ngày</td><td>Ghép cặp tính giờ và một bài kiểm tra ngắn</td></tr>
+          <tr><td>3</td><td>Sau 3 ngày</td><td>Kiểm tra, bật "Ưu tiên từ hay sai"</td></tr>
+          <tr><td>4</td><td>Sau 1 tuần</td><td>Học thích ứng với "Chỉ từ hay sai"</td></tr>
+          <tr><td>5</td><td>Sau 2–3 tuần</td><td>Kiểm tra trộn nhiều nhóm từ, độ khó Khó</td></tr>
+        </tbody></table>
+        <h3>Thói quen nhỏ, hiệu quả lớn</h3>
+        <ul>
+          <li>Tự đặt một câu của riêng mình cho mỗi từ khó. Câu càng gắn với cuộc sống của bạn càng dễ nhớ.</li>
+          <li>Học cả họ từ và giới từ đi kèm, ví dụ <i>adequate → inadequacy</i>, <i>reliant on</i>. Đề thi hay hỏi đúng những chỗ này.</li>
+          <li>Dùng tab Tiền tố – hậu tố để hiểu cấu tạo từ. Biết <i>bene</i> = tốt thì gặp <i>benevolent</i> sẽ đoán được nghĩa.</li>
+          <li>Học 20 phút mỗi ngày tốt hơn học 3 tiếng một lần mỗi tuần.</li>
+        </ul></div>
+        <div data-lang="en">
+        <h3>A routine for every group of words</h3>
+        <div class="steps">
+          <div class="step"><div><b>Pick a small group, 10–20 words.</b> In the Learn tab, choose a short range. Learning a few words well beats skimming a hundred.</div></div>
+          <div class="step"><div><b>Flashcards: get familiar.</b> Read the word, listen to it, then flip the card for the meaning and the example. Read the example aloud once. Tap "Not yet" if you are unsure.</div></div>
+          <div class="step"><div><b>Adaptive learning: active recall.</b> Each word goes through three steps: pick the meaning, recognise it from its definition, then type it. A mistake sends it back to step one, so keep going until the whole group is learned.</div></div>
+          <div class="step"><div><b>Dictation: spelling and pronunciation.</b> Very useful for IELTS Listening.</div></div>
+          <div class="step"><div><b>Timed matching: quick review.</b> Play a few rounds and try to beat your own record.</div></div>
+          <div class="step"><div><b>Test: use the words in context.</b> Take a timed test, read the explanations for the questions you missed, then tap "Practice missed words".</div></div>
+        </div>
+        <h3>Review on a schedule</h3>
+        <p>We forget fastest in the first few days. Review each group at these points; 10–15 minutes each time is enough:</p>
+        <table class="week"><thead><tr><th>Round</th><th>When</th><th>What to do</th></tr></thead><tbody>
+          <tr><td>1</td><td>Day you learn it</td><td>Flashcards, adaptive learning, dictation</td></tr>
+          <tr><td>2</td><td>After 1 day</td><td>Timed matching and a short test</td></tr>
+          <tr><td>3</td><td>After 3 days</td><td>Test with "Prioritize often-missed words" on</td></tr>
+          <tr><td>4</td><td>After 1 week</td><td>Adaptive learning with "Only often-missed words"</td></tr>
+          <tr><td>5</td><td>After 2–3 weeks</td><td>A mixed test across several groups, on Hard</td></tr>
+        </tbody></table>
+        <h3>Small habits, big results</h3>
+        <ul>
+          <li>Write one sentence of your own for each difficult word. The closer it is to your own life, the easier it is to remember.</li>
+          <li>Learn word families and dependent prepositions too, e.g. <i>adequate → inadequacy</i>, <i>reliant on</i>. Exams often test exactly these.</li>
+          <li>Use the Prefixes & suffixes tab to understand how words are built. Once you know <i>bene</i> = good, you can guess <i>benevolent</i>.</li>
+          <li>20 minutes a day beats 3 hours once a week.</li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="gsec hidden" data-g="wic">
+        <div data-lang="vi" data-noi18n>
+        <h3>Hai dạng câu Words in Context</h3>
+        <ul>
+          <li><b>Điền chỗ trống:</b> "Which choice completes the text with the most logical and precise word or phrase?" Tìm từ mà đoạn văn chứng minh được, không phải từ nghe hay nhất.</li>
+          <li><b>Most nearly mean:</b> "As used in the text, what does the word ... most nearly mean?" Từ được gạch chân thường là từ quen nhưng mang nghĩa ít gặp. Nghĩa thông dụng nhất thường chính là bẫy.</li>
+        </ul>
+        <h3>Năm bước làm bài</h3>
+        <div class="steps">
+          <div class="step"><div><b>Che các lựa chọn, đọc hết đoạn văn.</b> Manh mối hay nằm ở câu sau, hoặc sau dấu hai chấm, chấm phẩy.</div></div>
+          <div class="step"><div><b>Tìm manh mối.</b> Diễn giải lại (dấu hai chấm, "that is"), tương phản (but, however, although), nguyên nhân – kết quả (because, so, since), hoặc cấu trúc song song (not only... but also).</div></div>
+          <div class="step"><div><b>Tự đoán một từ đơn giản</b> bằng tiếng Anh hay tiếng Việt, ví dụ "đồng ý", "làm dễ hơn", "triệt tiêu".</div></div>
+          <div class="step"><div><b>Khớp cả nghĩa lẫn chiều.</b> Loại các lựa chọn ngược chiều (tích cực/tiêu cực, nhiều/ít) trước, rồi loại các từ đúng chủ đề nhưng không chính xác.</div></div>
+          <div class="step"><div><b>Đặt lại vào câu và đọc lại.</b> Với câu most nearly mean, thay từ gạch chân bằng đáp án xem câu còn hợp lý không.</div></div>
+        </div>
+        <h3>Những từ làm đổi chiều nghĩa</h3>
+        <p><i>how little, declines to, unlikely to, far from, rather than, hardly, by no means</i>. Gặp những cụm này, hãy đoán ngược với điều bạn nghĩ đầu tiên.</p></div>
+        <div data-lang="en">
+        <h3>Two kinds of Words in Context questions</h3>
+        <ul>
+          <li><b>Fill in the blank:</b> "Which choice completes the text with the most logical and precise word or phrase?" Choose the word the passage can prove, not the one that sounds best.</li>
+          <li><b>Most nearly mean:</b> "As used in the text, what does the word ... most nearly mean?" The underlined word is usually familiar but used in a less common sense. The most common meaning is often the trap.</li>
+        </ul>
+        <h3>Five steps</h3>
+        <div class="steps">
+          <div class="step"><div><b>Cover the choices and read the whole text.</b> The clue is often in the next sentence, or after a colon or semicolon.</div></div>
+          <div class="step"><div><b>Find the clue.</b> Restatement (colon, "that is"), contrast (but, however, although), cause and effect (because, so, since), or parallel structure (not only... but also).</div></div>
+          <div class="step"><div><b>Predict a simple word</b> in English or Vietnamese, e.g. "agree", "make easier", "cancel out".</div></div>
+          <div class="step"><div><b>Match both meaning and direction.</b> First cut choices that go the wrong way (positive/negative, more/less), then cut words that fit the topic but are not precise.</div></div>
+          <div class="step"><div><b>Plug it back in and reread.</b> For most-nearly-mean questions, replace the underlined word with your answer and check that the sentence still makes sense.</div></div>
+        </div>
+        <h3>Words that flip the meaning</h3>
+        <p><i>how little, declines to, unlikely to, far from, rather than, hardly, by no means</i>. When you see these, predict the opposite of your first instinct.</p>
+        </div>
+      </div>
+
+      <div class="gsec hidden" data-g="traps">
+        <div data-lang="vi" data-noi18n>
+        <h3>Mã bẫy trong phần giải thích</h3>
+        <p>Sau khi nộp bài, mỗi lựa chọn sai được gắn một mã. Biết mình hay mắc bẫy nào là cách nhanh nhất để lên điểm.</p>
+        </div>
+        <div data-lang="en">
+        <h3>Trap codes in the explanations</h3>
+        <p>After you submit, every wrong option is tagged with a code. Knowing which traps you fall for is the fastest way to raise your score.</p></div>
+        <div class="trapgrid" id="g-traps"></div>
+      </div>
+
+      <div class="gsec hidden" data-g="ielts">
+        <div data-lang="vi" data-noi18n>
+        <h3>Từ vựng cho IELTS</h3>
+        <ul>
+          <li><b>Reading và Listening kiểm tra paraphrase.</b> Đề hiếm khi dùng lại đúng từ trong bài, nên hãy luyện dạng Nối từ đồng nghĩa thường xuyên.</li>
+          <li><b>Đổi dạng từ là lỗi mất điểm phổ biến nhất.</b> Trước khi điền, xác định chỗ trống cần danh từ, động từ, tính từ hay trạng từ dựa vào từ đứng trước và sau.</li>
+          <li><b>Summary completion có nhiều lựa chọn hơn số chỗ trống.</b> Gạch bỏ các lựa chọn sai từ loại trước, rồi mới xét nghĩa.</li>
+          <li><b>Writing và Speaking cần dùng đúng, không cần dùng nhiều.</b> Một từ học thuật dùng đúng ngữ cảnh có giá trị hơn ba từ dùng gượng.</li>
+          <li><b>Chú ý chính tả</b>, vì Listening chấm sai nếu viết sai một chữ. Hãy dùng chế độ Nghe chép.</li>
+        </ul></div>
+        <div data-lang="en">
+        <h3>Vocabulary for IELTS</h3>
+        <ul>
+          <li><b>Reading and Listening test paraphrase.</b> The questions rarely reuse the exact words from the text, so practise Match synonyms regularly.</li>
+          <li><b>Word form is the most common way to lose marks.</b> Before you write, decide whether the blank needs a noun, verb, adjective or adverb from the words around it.</li>
+          <li><b>Summary completion has more options than blanks.</b> Cross out options with the wrong part of speech first, then think about meaning.</li>
+          <li><b>In Writing and Speaking, accuracy matters more than quantity.</b> One academic word used correctly is worth more than three forced ones.</li>
+          <li><b>Watch your spelling</b>: Listening answers are marked wrong for a single wrong letter. Use Dictation mode.</li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODAL ===== -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="m-title"><div class="mbox" id="m-box"></div></div>
+
+  <!-- ===== SAT AFFIX ===== -->
+  <section id="v-sat-affix" class="hidden">
+    <div class="sheet">
+      <div class="rangebar">
+        <label>Danh sách <select id="sx-list"><option value="all">Cả hai danh sách</option><option value="bb">Hay gặp</option><option value="br">Barron's</option></select></label>
+      </div>
+      <div class="modes" id="sx-modes">
+        <button class="chip on" data-mode="roots">Bảng gốc từ</button>
+        <button class="chip" data-mode="affixes">Tiền tố – hậu tố</button>
+        <button class="chip" data-mode="split">Tách từ</button>
+        <button class="chip" data-mode="pos">Đoán từ loại</button>
+        <button class="chip" data-mode="rootmean">Gốc từ → nghĩa</button>
+        <button class="chip" data-mode="family">Từ cùng gốc</button>
+      </div>
+      <div id="sx-area"></div>
+    </div>
+  </section>
+
+  <!-- ===== LEARN ===== -->
+  <section id="v-learn" class="hidden">
+    <div class="sheet">
+      <div class="rangebar">
+        <label>Từ số <input type="number" id="l-from" min="1" value="1"></label>
+        <label>đến <input type="number" id="l-to" min="1" value="10"></label>
+        <label><input type="checkbox" id="l-wrong"> Chỉ từ hay sai</label>
+      </div>
+      <div class="modes" id="l-modes">
+        <button class="chip on" data-mode="flash">Flashcard</button>
+        <button class="chip" data-mode="adapt">Học thích ứng</button>
+        <button class="chip" data-mode="dict">Nghe chép</button>
+        <button class="chip" data-mode="match">Ghép cặp tính giờ</button>
+      </div>
+      <div id="l-area"></div>
+    </div>
+  </section>
+
+  <!-- ===== AFFIX ===== -->
+  <section id="v-affix" class="hidden">
+    <div class="sheet">
+      <div class="rangebar hidden">
+        <label>Từ số <input type="number" id="a-from" min="1" value="1"></label>
+        <label>đến <input type="number" id="a-to" min="1" value="35"></label>
+      </div>
+      <div class="modes" id="a-modes">
+        <button class="chip on" data-mode="table">Bảng phụ tố</button>
+        <button class="chip" data-mode="split">Tách từ</button>
+        <button class="chip" data-mode="pos">Đoán từ loại</button>
+        <button class="chip" data-mode="family">Bảng họ từ</button>
+      </div>
+      <div id="a-area"></div>
+    </div>
+  </section>
+  <footer class="sitefoot"><span>StillHere Words · <span class="madeby">Được tạo bởi</span> <a href="https://stillhereduc.com/" target="_blank" rel="noopener">Still Here Duc</a></span><button class="linkbtn" id="foot-about">Giới thiệu</button></footer>
+</div>
+
+<script src="js/data/D.js"></script>
+<script src="js/data/IELTS_NEW.js"></script>
+<script src="js/data/BK.js"></script>
+<script src="js/data/SAT.js"></script>
+<script src="js/data/SAFF.js"></script>
+<script src="js/data/I18N_DICT.js"></script>
+<script src="js/data/EXTRA_EN.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

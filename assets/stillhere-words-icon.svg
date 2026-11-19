@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="512" height="512" role="img" aria-label="StillHere Words">
+<rect width="160" height="160" rx="36" fill="#062B4F"/>
+<rect x="28" y="26" width="88" height="108" rx="12" fill="#1C5FA8"/>
+<rect x="44" y="40" width="88" height="108" rx="12" fill="#EAF2FB"/>
+<rect x="56" y="110" width="11" height="24" rx="3" fill="#1C8F73"/>
+<rect x="72" y="98" width="11" height="36" rx="3" fill="#2F80D4"/>
+<rect x="88" y="84" width="11" height="50" rx="3" fill="#7A6FCF"/>
+<rect x="104" y="70" width="11" height="64" rx="3" fill="#5BBFA0"/>
+<polyline points="61.5,100 77.5,88 93.5,74 109.5,59" fill="none" stroke="#7FB0E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="61.5" cy="100" r="5" fill="#fff" stroke="#7FB0E0" stroke-width="2"/>
+<circle cx="77.5" cy="88" r="5" fill="#fff" stroke="#7FB0E0" stroke-width="2"/>
+<circle cx="93.5" cy="74" r="5" fill="#fff" stroke="#7FB0E0" stroke-width="2"/>
+<circle cx="109.5" cy="59" r="6" fill="#fff" stroke="#1C5FA8" stroke-width="2.5"/>
+</svg>
